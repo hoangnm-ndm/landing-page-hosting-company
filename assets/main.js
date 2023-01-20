@@ -1,13 +1,58 @@
-window.onscroll = function () {
-  myScroll();
-};
+// Hero
 
-var header = document.getElementById("header");
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
-function myFunction() {
-  if (window.pageYOffset > 80) {
-    header.classList.add("myScroll");
-  } else {
-    header.classList.remove("myScroll");
-  }
-}
+const tabs = $$(".tab-item");
+const panes = $$(".tab-pane");
+
+const tabActive = $(".tab-item.active");
+const line = $(".tabs .line");
+
+requestIdleCallback(function () {
+  line.style.left = tabActive.offsetLeft + "px";
+  line.style.width = tabActive.offsetWidth + "px";
+});
+
+tabs.forEach((tab, index) => {
+  const pane = panes[index];
+
+  tab.onclick = function () {
+    $(".tab-item.active").classList.remove("active");
+    $(".tab-pane.active").classList.remove("active");
+
+    line.style.left = this.offsetLeft + "px";
+    line.style.width = this.offsetWidth + "px";
+
+    this.classList.add("active");
+    pane.classList.add("active");
+  };
+});
+
+// price
+
+const tabsPrice = $$(".tab-item-price");
+const panesPrice = $$(".tab-pane-price");
+
+const tabActivePrice = $(".tab-item-price.active");
+const linePrice = $(".tabs-price .line-price");
+
+requestIdleCallback(function () {
+  line.style.left = tabActivePrice.offsetLeft + "px";
+  line.style.width = tabActivePrice.offsetWidth + "px";
+});
+
+tabsPrice.forEach((tab, index) => {
+  const pane = panes[index];
+
+  tab.onclick = function () {
+    $(".tab-item-price.active").classList.remove("active");
+    $(".tab-pane-price.active").classList.remove("active");
+
+    line.style.left = this.offsetLeft + "px";
+    line.style.width = this.offsetWidth + "px";
+
+    this.classList.add("active");
+    pane.classList.add("active");
+  };
+});
