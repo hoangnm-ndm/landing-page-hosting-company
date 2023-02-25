@@ -38,21 +38,21 @@ const tabActivePrice = $(".tab-item-price.active");
 const linePrice = $(".tabs-price .line-price");
 
 requestIdleCallback(function () {
-  line.style.left = tabActivePrice.offsetLeft + "px";
-  line.style.width = tabActivePrice.offsetWidth + "px";
+  linePrice.style.left = tabActivePrice.offsetLeft + "px";
+  linePrice.style.width = tabActivePrice.offsetWidth + "px";
 });
 
 tabsPrice.forEach((tab, index) => {
-  const pane = panes[index];
+  const panePrice = panesPrice[index];
 
   tab.onclick = function () {
     $(".tab-item-price.active").classList.remove("active");
     $(".tab-pane-price.active").classList.remove("active");
 
-    line.style.left = this.offsetLeft + "px";
-    line.style.width = this.offsetWidth + "px";
+    linePrice.style.left = this.offsetLeft + "px";
+    linePrice.style.width = this.offsetWidth + "px";
 
     this.classList.add("active");
-    pane.classList.add("active");
+    panePrice.classList.add("active");
   };
 });

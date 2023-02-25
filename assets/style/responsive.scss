@@ -1,0 +1,85 @@
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 48px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .container {
+    padding: 0 32px;
+  }
+  .header {
+    .menu {
+      display: block;
+    }
+    .nav-item,
+    .nav-wrap {
+      display: none !important;
+    }
+  }
+  .hero {
+    .hero-inner {
+      flex-direction: column;
+      .hero-content,
+      .hero-img {
+        width: 100%;
+      }
+    }
+  }
+
+  .customer {
+    .customer-inner {
+      .customer-brand {
+        & > div {
+          width: calc(100% / 2);
+        }
+      }
+    }
+  }
+  .benefit {
+    .benefit-item {
+      width: 50%;
+      h6 {
+        margin: 24px auto 6px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .benefit {
+    .benefit-item {
+      width: 50%;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    padding: 0 12px;
+  }
+  .customer {
+    .customer-inner {
+      justify-content: center;
+      flex-direction: column;
+      .customer-content {
+        width: 100%;
+      }
+      .customer-brand {
+        margin-top: 48px;
+        width: 100%;
+        & > div {
+          padding: 48px;
+        }
+      }
+    }
+  }
+  .benefit {
+    .benefit-item {
+      width: 100%;
+    }
+  }
+}
